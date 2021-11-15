@@ -27,10 +27,9 @@ void Samolet::setDimensions(double l, double h, double w) {
 	height = h;
 	width = w;
 }
-void Samolet::setSities(string arr[]) {
-	for (int i = 0; i < sizeof(arr) / sizeof(*arr); i++) {
-		cities.pushBack(arr[i]);
-	}
+void Samolet::setSities(string str) {
+		cities.pushBack(str);
+	
 }
 string Samolet::getType() {
 	return type;
@@ -82,5 +81,5 @@ int *Samolet::Read() {
 	return arr;
 }
 Samolet::~Samolet() {
-	cout << "Вызвался деструктор" << endl;
+	cout << "Вызвался деструктор Samolet" << endl;
 }

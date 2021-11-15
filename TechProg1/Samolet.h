@@ -13,7 +13,7 @@ public:
 	Samolet(const Samolet& other) {};
 	void setType(string t);
 	void setDimensions(double l, double h, double w);
-	void setSities(string arr[]);
+	void setSities(string str);
 	string getType();
 	double getLength();
 	double getHeight();

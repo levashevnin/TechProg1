@@ -32,10 +32,10 @@ void Poezd::setQty(int q) {
 void Poezd::setVolume(int v) {
 	volume = v;
 }
-void Poezd::setRoadMap(string arr[]) {
-	for (int i = 0; i < sizeof(arr) / sizeof(*arr); i++) {
-		roadMap.pushBack(arr[i]);
-	}
+void Poezd::setRoadMap(string str) {
+	
+		roadMap.pushBack(str);
+	
 }
 //геттеры:
 string Poezd::getName() {

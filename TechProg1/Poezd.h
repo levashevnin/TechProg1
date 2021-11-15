@@ -15,7 +15,7 @@ public:
 	void setDate(int d);
 	void setQty(int q);
 	void setVolume(int v);
-	void setRoadMap(string arr[]);
+	void setRoadMap(string str);
 	string getName();
 	int getDate();
 	int getQty();
