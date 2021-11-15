@@ -2,8 +2,10 @@
 #include <string>
 #include <iostream>
 #include "List.h"
+#include "Gruzoperevozchik.h"
+#include <fstream>
 using namespace std;
-class Avto
+class Avto:Gruzoperevozchik
 {
 private:
 	int date;
@@ -12,16 +14,18 @@ private:
 	List<AvtoRoadMap> cities;
 public:
 	Avto() : date(0), brand("none"), model("none") {};
-	Avto(int d, string b, string m, AvtoRoadMap c) {};
+	Avto(int d, string b, string m, List<AvtoRoadMap> c) {};
 	Avto(const Avto& other) {};
 	void setDate(int d);
 	void setBrand(string b);
 	void setModel(string m);
-	void setCity(AvtoRoadMap c);
+	void setCity(List<AvtoRoadMap> c);
 	int getDate();
 	string getBrand();
 	string getModel();
-	AvtoRoadMap getCity();
+	AvtoRoadMap* getCity();
+	void Print() override;
+	void Read() override;
 	~Avto();
 };
 

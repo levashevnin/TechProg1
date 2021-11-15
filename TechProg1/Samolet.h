@@ -2,8 +2,10 @@
 #include <string>
 #include <iostream>
 #include "List.h"
+#include "Gruzoperevozchik.h"
+#include <fstream>
 using namespace std;
-class Samolet
+class Samolet:Gruzoperevozchik
 {
 public:
 	Samolet() : type("None"), length(0), height(0), width(0) {};
@@ -16,7 +18,9 @@ public:
 	double getLength();
 	double getHeight();
 	double getWidth();
-	string *getCities();
+	string * getCities();
+	void Print() override;
+	void Read() override;
 	~Samolet();
 private:
 	string type;

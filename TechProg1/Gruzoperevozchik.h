@@ -1,6 +1,7 @@
 #pragma once
 
 class Gruzoperevozchik {
-	virtual void read() = 0;
-	virtual void print() = 0;
+public:
+	virtual void Read() = 0;
+	virtual void Print() = 0;
 };
