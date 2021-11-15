@@ -58,7 +58,7 @@ string* Poezd::getRoadMap() {
 	}
 	return arr;
 }
-void Poezd::Print() {
+void Poezd::Print(int n) {
 	string path = "Poezda.dat";
 	ofstream fout;
 	fout.open(path, ofstream::app);
@@ -66,10 +66,12 @@ void Poezd::Print() {
 		cout << "Ошибка открытия файла" << endl;
 	}
 	else {
-		fout.write((char*) this, sizeof(Poezd));
+		fout << n;
 	}
+	fout.close();
 }
-void Poezd::Read() {
+int *Poezd::Read() {
+	int arr[3];
 	string path = "Poezda.dat";
 	ifstream fin;
 	fin.open(path);
@@ -77,10 +79,13 @@ void Poezd::Read() {
 		cout << "Ошибка открытия файла";
 	}
 	else {
-		fin.read((char*)this, sizeof(Poezd));
+		for (int i = 0; i < 3; i++) {
+			fin >> arr[i];
+		}
 	}
 	fin.close;
+	return arr;
 }
 Poezd::~Poezd() {
-	cout << "Вызвался деструтор Poezda" << endl;
+	cout<<"Вызвался деструтор Poezda"<<endl;
 }

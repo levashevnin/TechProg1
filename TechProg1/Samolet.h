@@ -19,8 +19,8 @@ public:
 	double getHeight();
 	double getWidth();
 	string * getCities();
-	void Print() override;
-	void Read() override;
+	void Print(int n) override;
+	int *Read() override;
 	~Samolet();
 private:
 	string type;

@@ -53,18 +53,20 @@ string* Samolet::getCities() {
 	return arr;
 }
 
-void Samolet::Print() {
+void Samolet::Print(int n) {
 	string path = "transport.dat";
 	ofstream fout;
-	fout.open(path, ofstream::app);
+	fout.open(path);
 	if (!fout.is_open()) {
 		cout << "Ошибка открытия файла" << endl;
 	}
 	else {
-		fout.write((char*)this, sizeof(Samolet));
+		fout << n;
 	}
+	fout.close();
 }
-void Samolet::Read() {
+int *Samolet::Read() {
+	int arr[3];
 	string path = "transport.dat";
 	ifstream fin;
 	fin.open(path);
@@ -72,7 +74,13 @@ void Samolet::Read() {
 		cout << "Ошибка открытия файла";
 	}
 	else {
-		fin.read((char*)this, sizeof(Samolet));
+		for (int i = 0; i < 3; i++) {
+			fin >> arr[i];
+		}
 	}
-	fin.close;
+	fin.close();
+	return arr;
+}
+Samolet::~Samolet() {
+	cout << "Вызвался деструктор" << endl;
 }

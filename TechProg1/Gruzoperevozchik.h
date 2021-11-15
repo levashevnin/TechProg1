@@ -2,6 +2,6 @@
 
 class Gruzoperevozchik {
 public:
-	virtual void Read() = 0;
-	virtual void Print() = 0;
+	virtual int* Read() = 0;
+	virtual void Print(int n) = 0;
 };

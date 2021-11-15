@@ -24,8 +24,8 @@ public:
 	string getBrand();
 	string getModel();
 	AvtoRoadMap* getCity();
-	void Print() override;
-	void Read() override;
+	void Print(int n) override;
+	int* Read() override;
 	~Avto();
 };
 

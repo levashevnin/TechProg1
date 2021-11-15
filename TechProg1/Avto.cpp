@@ -48,7 +48,7 @@ AvtoRoadMap* Avto::getCity() {
 	return arr;
 }
 
-void Avto::Print() {
+void Avto::Print(int n) {
 	string path = "transport.dat";
 	ofstream fout;
 	fout.open(path, ofstream::app);
@@ -56,10 +56,12 @@ void Avto::Print() {
 		cout << "Ошибка открытия файла" << endl;
 	}
 	else {
-		fout.write((char*)this, sizeof(Avto));
+		fout << n;
 	}
+	fout.close();
 }
-void Avto::Read() {
+int *Avto::Read() {
+	int arr[3];
 	string path = "transport.dat";
 	ifstream fin;
 	fin.open(path);
@@ -67,9 +69,12 @@ void Avto::Read() {
 		cout << "Ошибка открытия файла";
 	}
 	else {
-		fin.read((char*)this, sizeof(Avto));
+		for (int i = 0; i < 3; i++) {
+			fin >> arr[i];
+		}
 	}
 	fin.close;
+	return arr;
 }
 Avto::~Avto(){
 	cout << "Вызвался деструктор Avto" << endl;

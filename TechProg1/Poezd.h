@@ -21,8 +21,8 @@ public:
 	int getQty();
 	int getVolume();
 	string* getRoadMap();
-	void Print() override;
-	void Read() override;
+	void Print(int n) override;
+	int *Read() override;
 	~Poezd();
 private:
 	string name;
